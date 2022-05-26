@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+<script type="text/javascript" src="{{url_for('static',filename='implement.js')}}"></script>
+{% extends "bootstrap/base.html" %}
+<title>{% block title %}mycits3404games{% endblock %}</title>
+    </head>
+    <body>
+{% block navbar %}
+<div class="navbar">
+    <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+    <a href="{{ url_for('about') }}" class="navbar-item">tips</a>
+    <a href="{{ url_for('contact') }}" class="navbar-item">Login</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="page-header">
+<h1>Hello,Tourist! </h1>
+<h2>Welcome to Yahtzee Game! </h2>
+</div>
+</div>
+<div class="container">
+            <div class="row">
+                <div class=" clearfix visible-xs"></div>
+                <span id="dice1">?</span>
+                <span id="dice2">?</span>
+                <span id="dice3">?</span>
+                <span id="dice4">?</span>
+                <span id="dice5">?</span>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-4 col-sm-3 col-2 column">
+                     <button onclick="clickroll()"  type="button" id="reroll" class="btn btn-default btn-warning active btn-block">reroll</button>
+                </div>               
+            </div>
+        </br>
+        
+
+    <div class="row clearfix col-12">
+        <div id="row1" class="col-md-6 col-4 col-sm-5 column">
+             <button id="1" onclick="clickone()" type="button" class="btn btn-default btn-primary btn-block active">1</button><br>
+             <button id="2" onclick="clicktwo()" type="button" class="btn btn-default btn-primary btn-block active">2</button><br>
+             <button id="3" onclick="clickthree()" type="button" class="btn btn-default btn-primary btn-block active">3</button><br>
+             <button id="4" onclick="clickfour()" type="button" class="btn btn-default btn-primary btn-block active">4</button><br>
+             <button id="5" onclick="clickfive()" type="button" class="btn btn-default btn-primary active btn-block">5</button><br>
+             <button id="6" onclick="clicksix()" type="button" class="btn btn-default btn-primary btn-block active">6</button>
+            </br></div>
+        <div id="row2" class="col-md-6 col-4 col-sm-5  column">
+             <button id="7" onclick="clickseven()" type="button" class="btn btn-default btn-success btn-block active">all</button><br>
+             <button id="8" onclick="clickeight()" type="button" class="btn btn-default btn-success btn-block active">tripple</button><br>
+             <button id="9" onclick="clicknine()" type="button" class="btn btn-default btn-success btn-block active">4same</button><br>
+             <button id="10" onclick="clickten()" type="button" class="btn btn-default btn-success btn-block active">Yahtzee</button><br>
+             <button id="11" onclick="clickeleven()" type="button" class="btn btn-default btn-success btn-block active">s-straight</button><br>
+             <button id="12" onclick="clicktwelve()" type="button" class="btn btn-default btn-success btn-block active">straight</button>
+        </div>
+    </div>
+</br>
+    <div class="col-md-12 column">
+        <p>Your total point is:<span id="point">0</span></p>
+        <button id="reset" onclick="restart()" type="button" class="btn btn-default btn-warning btn-block active">restart</button>
+    </div>
+
+
+  </div>
+{% endblock %}
+</body>
+</html>
